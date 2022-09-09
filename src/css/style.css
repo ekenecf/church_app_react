@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+  height: 70px;
+  background: rgb(26, 102, 26);
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  height: 80%;
+  margin-left: 10%;
+}
+
+.Lists {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 10%;
+  width: 30%;
+  list-style-type: none;
+}
+
+.Lists li {
+  transform: scale(1);
+  transition: all 300ms;
+}
+
+.Lists li:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .Lists {
+    display: none;
+  }
+}
