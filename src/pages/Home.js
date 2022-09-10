@@ -1,9 +1,13 @@
 import React from 'react';
+import Slide from '../Components/Slide';
+import '../css/Estyle.css';
 
 export default function Home() {
   return (
-    <div>
-      {/* Here is the landing page */}
+    <div className="HomeContainer">
+      <div className="SideContainer">
+        <Slide />
+      </div>
     </div>
   );
 }
