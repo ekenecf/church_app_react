@@ -1,0 +1,76 @@
+.HomeContainer {
+  width: 100%;
+  height: 100vh;
+}
+
+.SideContainer {
+  width: 100%;
+  height: 70vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.884), rgba(0, 0, 0, 0.87)),
+    url(../assets/backdrop1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.Slider {
+  width: 70%;
+  height: 80%;
+  color: white;
+  margin-left: 10%;
+}
+
+.Slider > h1 {
+  font-size: 35px;
+  color: yellow;
+  margin-bottom: 0;
+}
+
+.Slider > p {
+  font-size: 18px;
+  color: white;
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.Slider > span {
+  font-size: 18px;
+  color: lightgray;
+  font-weight: 600;
+}
+
+.MyCover {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10%;
+  margin-bottom: 2%;
+  display: flex;
+  width: 10%;
+}
+
+.Cove {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+  .Slider {
+    margin-top: -20px;
+  }
+
+  .Slider > h1 {
+    margin-top: -5px;
+  }
+
+  .Slider > p {
+    width: 100%;
+  }
+}
