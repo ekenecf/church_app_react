@@ -6,7 +6,8 @@
 .SideContainer {
   width: 100%;
   height: 70vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.884), rgba(0, 0, 0, 0.87)),
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.884), rgba(0, 0, 0, 0.87)),
     url(../assets/backdrop1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,7 +26,7 @@
 .Slider > h1 {
   font-size: 35px;
   color: yellow;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .Slider > p {
@@ -43,13 +44,13 @@
 }
 
 .MyCover {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 10%;
-    margin-bottom: 2%;
-    display: flex;
-    width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10%;
+  margin-bottom: 2%;
+  display: flex;
+  width: 10%;
 }
 
 .Cove {
@@ -57,7 +58,7 @@
   height: 20px;
   background: white;
   border-radius: 50%;
-  margin: 0px 5px;
+  margin: 0 5px;
 }
 
 @media (max-width: 768px) {
