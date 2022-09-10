@@ -1,7 +1,6 @@
 .header {
-  position: fixed;
-  width: 100%;
-  height: 70px;
+  position: sticky;
+  height: 10vh;
   background: rgb(18, 41, 18);
   color: aliceblue;
   display: flex;
@@ -59,14 +58,11 @@
     width: 100%;
     height: 100vh;
     background: rgba(0, 12, 0, 0.808);
-
-    /* backdrop-filter: blur(5px); */
+    z-index: 1;
   }
 
   .Mobile-List {
     height: 75vh;
-    list-style-type: none;
-    color: aliceblue;
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -75,16 +71,22 @@
     align-items: center;
   }
 
+  .Mobile-List a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
   .cancel {
     font-size: 32px;
     color: aliceblue;
     position: absolute;
-    right: 37px;
+    right: 45px;
     top: 10px;
   }
 
   .mobile {
     display: flex;
     justify-content: center;
+    height: 100vh;
   }
 }
