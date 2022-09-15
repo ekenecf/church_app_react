@@ -20,6 +20,7 @@ const Header = () => {
           <li>Home</li>
           <li>Events</li>
           <li>Members</li>
+          <li>Admin Login</li>
         </ul>
         <div className="hamburger">
           <div role="button" tabIndex={0} onClick={handlemenu} onKeyDown={handlemenu}>

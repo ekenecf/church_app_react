@@ -12,10 +12,10 @@ const Slide = () => (
       9/9/2022
     </span>
     <div className="MyCover">
-      <div className="Cove">o</div>
-      <div className="Cove">o</div>
-      <div className="Cove">o</div>
-      <div className="Cove">o</div>
+      <div className="Cove" />
+      <div className="Cove" />
+      <div className="Cove" />
+      <div className="Cove" />
     </div>
   </div>
 );

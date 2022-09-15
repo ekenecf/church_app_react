@@ -18,6 +18,9 @@ function MobileMenu(props) {
         <NavLink to="/Members">
           <div className="link-remove" role="button" tabIndex={0} onClick={CancelMenu} onKeyDown={CancelMenu}>Members</div>
         </NavLink>
+        <NavLink to="/AdminLogin">
+          <div className="link-remove" role="button" tabIndex={0} onClick={CancelMenu} onKeyDown={CancelMenu}>Admin Login</div>
+        </NavLink>
       </div>
       <div className="cancel" role="button" tabIndex={0} onClick={CancelMenu} onKeyDown={CancelMenu}>X</div>
     </div>

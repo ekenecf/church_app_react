@@ -1,8 +1,3 @@
-/* .HomeContainer {
-  width: 100%;
-  height: 100vh;
-} */
-
 .SideContainer {
   width: 100%;
   height: 100vh;
@@ -13,8 +8,6 @@
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-
-  /* position: relative; */
 }
 
 .Slider {
@@ -32,8 +25,6 @@
 
 .Slider > p {
   font-size: 18px;
-
-  /* color: white; */
   border: 1px solid gray;
   padding: 20px;
   border-radius: 3px;
@@ -55,21 +46,13 @@
 
 .Cove {
   width: 20px;
-  height: 20px;
+  height: 10px;
   background: white;
   border-radius: 50%;
   margin: 0 5px;
 }
 
 @media (max-width: 768px) {
-  .Slider {
-    margin-top: -20px;
-  }
-
-  .Slider > h1 {
-    margin-top: -5px;
-  }
-
   .Slider > p {
     width: 100%;
   }
