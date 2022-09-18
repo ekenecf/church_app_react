@@ -1,25 +1,28 @@
 import ActionTypes from './ActionTypes';
 
 const initialState = {
-  users: [],
+  groups: [],
   loading: false,
   error: false,
-  response: '',
+  // groupId: [],
 };
 
-const UserDataReducer = (state = initialState, { type, payload }) => {
+const GroupDataReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.FETCH_DATA_LOADING:
       return {
         ...state, loading: true,
       };
-    case ActionTypes.USER_LOGIN:
+    case ActionTypes.ALL_GROUPS:
+      console.log(state);
       return {
-        ...state, response: payload,
+        ...state, groups: payload, loading: false,
       };
-    case ActionTypes.GET_USER:
+    case ActionTypes.REMOVE_GROUP:
       return {
-        ...state, users: payload, loading: false,
+        ...state,
+        groups: state.groups.filter((group) => group.id !== payload),
+        loading: false,
       };
     case ActionTypes.FETCH_DATA_ERROR:
       return {
@@ -29,4 +32,4 @@ const UserDataReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export default UserDataReducer;
+export default GroupDataReducer;

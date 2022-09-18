@@ -3,6 +3,7 @@ import {
 } from './Actions';
 
 const URL = 'https://stcharlescyon.herokuapp.com/auth/login';
+const URL2 = 'https://stcharlescyon.herokuapp.com/users';
 
 export const postUserLogin = (user) => (dispatch) => {
   dispatch(setLoadingData());
@@ -13,14 +14,8 @@ export const postUserLogin = (user) => (dispatch) => {
     },
     body: JSON.stringify((user)),
   }).then((res) => {
-    console.log('this is res', res.status);
-    // const response = res;
-    // console.log('this is response', response);
-
+    // console.log(res.json());
     dispatch(GetUserLogin(res.status));
-    // sessionStorage.setItem('response', res.status);
-    // const getResponse = sessionStorage.getItem('response');
-    // console.log(getResponse);
   }).catch((error) => {
     dispatch(setDataError());
     console.log(error);
@@ -30,10 +25,9 @@ export default postUserLogin;
 
 export const GetUserDetail = () => (dispatch) => {
   dispatch(setLoadingData());
-  fetch(URL)
+  fetch(URL2)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       dispatch(GetUser(data));
     })
     .catch((error) => {

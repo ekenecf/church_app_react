@@ -40,7 +40,6 @@
   display: none;
 }
 
-.AdminLogin, 
 .Events,
 .MemberDetail,
 .Members,
@@ -81,6 +80,8 @@
     justify-content: center;
     gap: 20%;
     align-items: center;
+    position: absolute;
+    top: 10%;
   }
 
   .Mobile-List a {

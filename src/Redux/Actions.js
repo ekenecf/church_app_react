@@ -54,8 +54,13 @@ export const addGroup = (data) => ({
   payload: data,
 });
 
-export const removeGroup = (data) => ({
+export const removeGroup = (id) => ({
   type: ActionTypes.REMOVE_GROUP,
+  payload: id,
+});
+
+export const allGroups = (data) => ({
+  type: ActionTypes.ALL_GROUPS,
   payload: data,
 });
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { postUserLogin } from '../Redux/Api';
-// import { useNavigate } from 'react-router-dom';
 import '../css/style.css';
 
 const AdminLogin = () => {
-//   const Navigate = useNavigate()
+  const Navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = e.target.elements;
@@ -20,15 +20,28 @@ const AdminLogin = () => {
     password.value = '';
   };
 
+  const { response } = useSelector((state) => state.UserDataReducer);
+  console.log('Admin login response', response);
+
+  if (response === 200) {
+    Navigate('/AdminDashboard');
+    sessionStorage.setItem('serverResponse', response);
+  }
+
+  let message = '';
+  if (response === 401) {
+    message = 'User does not exist';
+  }
+
   return (
     <div className="AdminLogin">
       <h2>Admin Login</h2>
-      <form className="d_flex_r" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input type="email" name="email" placeholder="Email here" required />
         <input type="password" name="password" placeholder="password" required />
-        <NavLink to="/AdminDashboard">
-          <button type="submit">Add</button>
-        </NavLink>
+        <button type="submit">Add</button>
+        <br />
+        {message}
       </form>
     </div>
   );
