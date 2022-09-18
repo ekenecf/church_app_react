@@ -1,13 +1,14 @@
 import ActionTypes from './ActionTypes';
 
 const initialState = {
-  groups: [],
+  members: [],
   loading: false,
   error: false,
+  memberDetail: [],
   // groupId: [],
 };
 
-const GroupDataReducer = (state = initialState, { type, payload }) => {
+const MemberDataReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.FETCH_DATA_LOADING:
       return {
@@ -18,10 +19,10 @@ const GroupDataReducer = (state = initialState, { type, payload }) => {
       return {
         ...state, groups: payload, loading: false,
       };
-    case ActionTypes.REMOVE_GROUP:
+    case ActionTypes.REMOVE_MEMBER:
       return {
         ...state,
-        groups: state.groups.filter((group) => group.id !== payload),
+        members: state.members.filter((member) => member.id !== payload),
         loading: false,
       };
     case ActionTypes.FETCH_DATA_ERROR:
@@ -32,4 +33,4 @@ const GroupDataReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export default GroupDataReducer;
+export default MemberDataReducer;

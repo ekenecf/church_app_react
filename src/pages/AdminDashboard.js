@@ -42,7 +42,7 @@ function AdminDashboard() {
           <div>Create Event</div>
         </NavLink>
 
-        <NavLink to="/CreateMember">
+        <NavLink to="/CreateMember" state={{ adminId: adminUser.id }}>
           <div>Create Member</div>
         </NavLink>
 
