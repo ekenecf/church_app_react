@@ -1,0 +1,39 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { postGroup } from '../Redux/GroupApi';
+
+function CreateGroup() {
+  // const Navigate = useNavigate();
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const { adminId } = location.state || {};
+  console.log('Admin ID', adminId);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, detail } = e.target.elements;
+    const createdGroup = {
+      name: name.value,
+      detail: detail.value,
+    };
+    dispatch(postGroup(createdGroup, adminId));
+    name.value = '';
+    detail.value = '';
+  };
+
+  return (
+
+    <div className="AdminDashboard">
+      <h2>Create group</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Name of group here" required />
+        <input type="text" name="detail" placeholder="Brief detail of group" required />
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+  );
+}
+
+export default CreateGroup;
