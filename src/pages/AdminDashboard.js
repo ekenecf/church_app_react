@@ -10,7 +10,7 @@ function AdminDashboard() {
   const { loading, users } = useSelector((state) => state.UserDataReducer);
   const dispatch = useDispatch();
 
-  const adminUser = { ...users[1] };
+  const adminUser = { ...users[0] };
 
   const handleLogout = () => sessionStorage.removeItem('serverResponse');
 

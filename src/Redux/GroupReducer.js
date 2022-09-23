@@ -13,7 +13,7 @@ const GroupDataReducer = (state = initialState, { type, payload }) => {
       return {
         ...state, loading: true,
       };
-    case ActionTypes.FETCH_MEMBER_DATA:
+    case ActionTypes.ALL_GROUPS:
       console.log(state);
       return {
         ...state, groups: payload, loading: false,

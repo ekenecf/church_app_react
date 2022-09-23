@@ -4,9 +4,9 @@ import {
 
 const MEMBERURL = 'https://stcharlescyon.herokuapp.com/users';
 
-export const postMember = (members, userid) => (dispatch) => {
+export const postMember = (members, userid, groupId) => (dispatch) => {
   dispatch(setLoadingData());
-  fetch(`${MEMBERURL}/${userid}/members`, {
+  fetch(`${MEMBERURL}/${userid}/groups/${groupId}/members`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -20,30 +20,29 @@ export const postMember = (members, userid) => (dispatch) => {
     console.log(error);
   });
 };
-export default postGroup;
 
-const GETGROUP = 'https://stcharlescyon.herokuapp.com/groups';
-export const GetAllGroups = () => (dispatch) => {
+const GETMEMBER = 'https://stcharlescyon.herokuapp.com/members';
+export const GetAllMembers = () => (dispatch) => {
   dispatch(setLoadingData());
-  fetch(GETGROUP)
+  fetch(GETMEMBER)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      dispatch(allGroups(data));
+      dispatch(setMemberData(data));
     })
     .catch((error) => {
       dispatch(setDataError(error.message));
     });
 };
 
-const DELGROUP = 'https://stcharlescyon.herokuapp.com/users';
+const DELMEMBER = 'https://stcharlescyon.herokuapp.com/users';
 
-export const DeleteGroup = (userid, groupid) => (dispatch) => {
-  fetch(`${DELGROUP}/${userid}/groups/${groupid}`, {
+export const DeleteMember = (userid, memberid) => (dispatch) => {
+  fetch(`${DELMEMBER}/${userid}/members/${memberid}`, {
     method: 'DELETE',
-    body: JSON.stringify((userid, groupid)),
+    body: JSON.stringify((userid, memberid)),
   })
     .then(() => {
-      dispatch(removeGroup(groupid));
+      dispatch(removeMember(memberid));
     });
 };

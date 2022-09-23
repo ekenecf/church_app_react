@@ -20,7 +20,6 @@ export const postGroup = (group, userid) => (dispatch) => {
     console.log(error);
   });
 };
-export default postGroup;
 
 const GETGROUP = 'https://stcharlescyon.herokuapp.com/groups';
 export const GetAllGroups = () => (dispatch) => {
