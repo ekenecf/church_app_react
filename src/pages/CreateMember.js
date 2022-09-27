@@ -41,8 +41,7 @@ function CreateMember() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setImage(e.target.files[0]);
-    // const savedPhoto = URL.createObjectURL(file);
+
     const {
       name, number, occupation, postheld, birthday,
     } = e.target.elements;
@@ -97,11 +96,3 @@ function CreateMember() {
 }
 
 export default CreateMember;
-
-// const [isChecked, setIsChecked] = useState(false);
-
-// const handleOnChange = () => {
-//   setIsChecked(!isChecked);
-// };
-// checked={isChecked}
-//           onChange={handleOnChange}
