@@ -2,8 +2,8 @@ import {
   GetUser, setLoadingData, setDataError, GetUserLogin,
 } from './Actions';
 
-const URL = 'https://stcharlescyon.herokuapp.com/auth/login';
-const URL2 = 'https://stcharlescyon.herokuapp.com/users';
+const URL = 'http://127.0.0.1:3000/auth/login';
+const URL2 = 'http://127.0.0.1:3000/users';
 
 export const postUserLogin = (user) => (dispatch) => {
   dispatch(setLoadingData());
@@ -14,7 +14,7 @@ export const postUserLogin = (user) => (dispatch) => {
     },
     body: JSON.stringify((user)),
   }).then((res) => {
-    // console.log(res.json());
+    console.log(res);
     dispatch(GetUserLogin(res.status));
   }).catch((error) => {
     dispatch(setDataError());

@@ -4,9 +4,8 @@ export const setLoadingData = () => ({
   type: ActionTypes.FETCH_DATA_LOADING,
 });
 
-export const setDataError = (error) => ({
+export const setDataError = () => ({
   type: ActionTypes.FETCH_DATA_ERROR,
-  payload: error,
 });
 
 export const setEventData = (data) => ({

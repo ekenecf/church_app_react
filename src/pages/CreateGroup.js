@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, NavLink } from 'react-router-dom';
 import { postGroup } from '../Redux/GroupApi';
 
 function CreateGroup() {
-  // const Navigate = useNavigate();
+  const Navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
   const { adminId } = location.state || {};
@@ -18,6 +18,7 @@ function CreateGroup() {
       detail: detail.value,
     };
     dispatch(postGroup(createdGroup, adminId));
+    Navigate('/AdminDashboard');
     name.value = '';
     detail.value = '';
   };
@@ -31,8 +32,10 @@ function CreateGroup() {
         <input type="text" name="detail" placeholder="Brief detail of group" required />
         <button type="submit">Add</button>
       </form>
+      <button type="button">
+        <NavLink to="/AdminDashboard">Back to AdminDashboard </NavLink>
+      </button>
     </div>
-
   );
 }
 

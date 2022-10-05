@@ -3,9 +3,12 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import UserDataReducer from './Reducer';
 import GroupDataReducer from './GroupReducer';
+import MemberDataReducer from './MemberReducer';
 
 const rootReducer = combineReducers({
-  UserDataReducer, GroupDataReducer,
+  UserDataReducer,
+  GroupDataReducer,
+  MemberDataReducer,
 });
 
 const store = createStore(rootReducer,
