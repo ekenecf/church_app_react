@@ -115,7 +115,7 @@ function CreateMember() {
   return (
     <div className="AdminDashboard">
       <h2>Create Member</h2>
-      <form type="multipart/form-data" onSubmit={handleSubmit}>
+      <form type="multipart/form-data" onSubmit={(e) => handleSubmit(e)}>
         <input type="text" name="name" placeholder="Name of member here" onChange={updateName} required />
         <input type="number" name="number" placeholder="Phone number" onChange={updateNumber} required />
         <input type="text" name="occupation" placeholder="Occupation" onChange={updateOccupation} required />
