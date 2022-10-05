@@ -14,7 +14,7 @@ export const postUserLogin = (user) => (dispatch) => {
     },
     body: JSON.stringify((user)),
   }).then((res) => {
-    // console.log(res.json());
+    console.log(res);
     dispatch(GetUserLogin(res.status));
   }).catch((error) => {
     dispatch(setDataError());

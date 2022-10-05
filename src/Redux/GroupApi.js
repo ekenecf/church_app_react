@@ -1,8 +1,9 @@
+import axios from 'axios';
 import {
   addGroup, removeGroup, allGroups, setLoadingData, setDataError,
 } from './Actions';
 
-const GROUPURL = 'https://stcharlescyon.herokuapp.com/users';
+const GROUPURL = 'http://127.0.0.1:3000/users';
 
 export const postGroup = (group, userid) => (dispatch) => {
   dispatch(setLoadingData());
@@ -35,14 +36,11 @@ export const GetAllGroups = () => (dispatch) => {
     });
 };
 
-const DELGROUP = 'https://stcharlescyon.herokuapp.com/users';
+const DELGROUP = 'http://127.0.0.1:3000/users';
 
 export const DeleteGroup = (userid, groupid) => (dispatch) => {
-  fetch(`${DELGROUP}/${userid}/groups/${groupid}`, {
-    method: 'DELETE',
-    body: JSON.stringify((userid, groupid)),
-  })
-    .then(() => {
-      dispatch(removeGroup(groupid));
+  axios.delete(`${DELGROUP}/${userid}/groups/${groupid}`)
+    .then((response) => {
+      dispatch(removeGroup(response));
     });
 };

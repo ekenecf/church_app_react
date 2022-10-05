@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { postMember } from '../Redux/MemberApi';
 import { GetAllGroups } from '../Redux/GroupApi';
@@ -141,6 +141,9 @@ function CreateMember() {
         </label>
         <button type="submit">Add Member</button>
       </form>
+      <button type="button">
+        <NavLink to="/AdminDashboard">Back to AdminDashboard </NavLink>
+      </button>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { GetUserDetail } from '../Redux/Api';
 import '../css/style.css';
 
@@ -9,10 +9,14 @@ function AdminDashboard() {
 
   const { loading, users } = useSelector((state) => state.UserDataReducer);
   const dispatch = useDispatch();
+  const Navigate = useNavigate();
 
   const adminUser = { ...users[0] };
 
-  const handleLogout = () => sessionStorage.removeItem('serverResponse');
+  const handleLogout = () => {
+    sessionStorage.removeItem('serverResponse');
+    Navigate('/');
+  };
 
   useEffect(() => {
     dispatch(GetUserDetail());
@@ -48,7 +52,7 @@ function AdminDashboard() {
 
         <button
           type="button"
-          onClick={() => handleLogout}
+          onClick={() => handleLogout()}
         >
           Log out
         </button>

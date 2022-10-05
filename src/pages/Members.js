@@ -9,6 +9,7 @@ export default function Members() {
   const dispatch = useDispatch();
   const { members } = useSelector((state) => state.MemberDataReducer);
   const { users } = useSelector((state) => state.UserDataReducer);
+  const getResponse = sessionStorage.getItem('serverResponse');
 
   console.log(members);
 
@@ -25,11 +26,6 @@ export default function Members() {
     window.location.reload();
   };
 
-  // const handleMemberDetail = (id) => {
-  //   dispatch(GetMemberDetail(id));
-  //   console.log(id);
-  // };
-
   return (
     <div className="Members">
       <h2>All members</h2>
@@ -39,14 +35,23 @@ export default function Members() {
           ? members.map((member) => (
             <div key={member.id}>
               <div>{member.picture}</div>
-              <button
-                type="button"
-                onClick={() => handleDelete(adminUser.id, member.group_id, member.id)}
-              >
-                Delete Member
-              </button>
+              {getResponse
+                ? (
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(adminUser.id, member.group_id, member.id)}
+                  >
+                    Delete Member
+                  </button>
+                ) : null}
               <button type="button">
                 <NavLink to={`/Members/${member.id}`} state={{ memberid: member.id }}>Member detail</NavLink>
+              </button>
+              <button type="button">
+                <NavLink to="/"> Back to Home </NavLink>
+              </button>
+              <button type="button">
+                <NavLink to="/AdminDashboard">Back to AdminDashboard </NavLink>
               </button>
             </div>
           ))
