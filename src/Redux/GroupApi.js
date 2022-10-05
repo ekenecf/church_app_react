@@ -21,7 +21,7 @@ export const postGroup = (group, userid) => (dispatch) => {
   });
 };
 
-const GETGROUP = 'https://stcharlescyon.herokuapp.com/groups';
+const GETGROUP = 'http://127.0.0.1:3000/groups';
 export const GetAllGroups = () => (dispatch) => {
   dispatch(setLoadingData());
   fetch(GETGROUP)

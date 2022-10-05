@@ -1,26 +1,20 @@
 import ActionTypes from './ActionTypes';
 
 const initialState = {
-  members: [],
+  events: [],
   loading: false,
   error: false,
-  memberDetail: [],
 };
 
-const MemberDataReducer = (state = initialState, { type, payload }) => {
+const EventDataReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.FETCH_DATA_LOADING:
       return {
         ...state, loading: true,
       };
-    case ActionTypes.FETCH_MEMBER_DATA:
+    case ActionTypes.FETCH_EVENT_DATA:
       return {
-        ...state, members: payload, loading: false,
-      };
-    case ActionTypes.FETCH_MEMBER_DETAILS:
-      console.log(state);
-      return {
-        ...state, memberDetail: payload,
+        ...state, events: payload, loading: false,
       };
     case ActionTypes.FETCH_DATA_ERROR:
       return {
@@ -30,4 +24,4 @@ const MemberDataReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export default MemberDataReducer;
+export default EventDataReducer;

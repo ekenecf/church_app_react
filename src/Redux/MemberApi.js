@@ -1,33 +1,33 @@
+import axios from 'axios';
 import {
-  addMember, removeMember, setMemberData, setLoadingData, setDataError,
+  addMember, removeMember, setMemberData, setLoadingData, setDataError, setMemberDetailData,
 } from './Actions';
 
-const MEMBERURL = 'https://stcharlescyon.herokuapp.com/users';
+const MEMBERURL = 'http://127.0.0.1:3000/users';
 
-export const postMember = (members, userid, groupId) => (dispatch) => {
+export const postMember = (member, userid, groupId) => (dispatch) => {
   dispatch(setLoadingData());
-  fetch(`${MEMBERURL}/${userid}/groups/${groupId}/members`, {
-    method: 'POST',
+  const config = {
     headers: {
-      'Content-Type': 'application/json',
+      'content-type': 'multipart/formData',
     },
-    body: JSON.stringify((members)),
-  }).then((res) => {
-    console.log(res);
-    dispatch(addMember(res));
-  }).catch((error) => {
-    dispatch(setDataError());
-    console.log(error);
-  });
+  };
+  axios.post(`${MEMBERURL}/${userid}/groups/${groupId}/members`, member, config)
+    .then((res) => {
+      console.log('Expecting res', res);
+      dispatch(addMember(res));
+    }).catch((error) => {
+      dispatch(setDataError());
+      console.log('Catch error', error);
+    });
 };
 
-const GETMEMBER = 'https://stcharlescyon.herokuapp.com/members';
+const GETMEMBER = 'http://127.0.0.1:3000/members';
 export const GetAllMembers = () => (dispatch) => {
   dispatch(setLoadingData());
   fetch(GETMEMBER)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       dispatch(setMemberData(data));
     })
     .catch((error) => {
@@ -35,14 +35,25 @@ export const GetAllMembers = () => (dispatch) => {
     });
 };
 
-const DELMEMBER = 'https://stcharlescyon.herokuapp.com/users';
+const DELMEMBER = 'http://127.0.0.1:3000/users';
+export const DeleteMember = (userid, groupId, memberid) => (dispatch) => {
+  axios.delete(`${DELMEMBER}/${userid}/groups/${groupId}/members/${memberid}`)
+    .then((response) => {
+      dispatch(removeMember(response));
+    });
+};
 
-export const DeleteMember = (userid, memberid) => (dispatch) => {
-  fetch(`${DELMEMBER}/${userid}/members/${memberid}`, {
-    method: 'DELETE',
-    body: JSON.stringify((userid, memberid)),
-  })
-    .then(() => {
-      dispatch(removeMember(memberid));
+const GETMEMBERDetail = 'http://127.0.0.1:3000/members';
+
+export const GetMemberDetail = (id) => (dispatch) => {
+  dispatch(setLoadingData());
+  fetch(`${GETMEMBERDetail}/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      dispatch(setMemberDetailData(data));
+    })
+    .catch((error) => {
+      dispatch(setDataError(error.message));
     });
 };

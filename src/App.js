@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Events from './pages/Events';
 import Members from './pages/Members';
 import MemberDetail from './pages/MemberDetail';
-import Header from './Components/Header';
+import Header from './components/Header';
 import AdminLogin from './pages/AdminLogin';
 import store from './Redux/Store';
 import AdminDashboard from './pages/AdminDashboard';
