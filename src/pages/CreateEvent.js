@@ -141,9 +141,9 @@ function CreateEvent() {
         <input type="file" name="image" onChange={(e) => updateImage(e)} required />
         <input type="file" name="image1" onChange={(e) => updateImage1(e)} required />
         <input type="file" name="image2" onChange={(e) => updateImage2(e)} required />
-        <input type="file" name="image3" onChange={(e) => updateImage3(e)} />
-        <input type="file" name="image4" onChange={(e) => updateImage4(e)} />
-        <input type="file" name="image5" onChange={(e) => updateImage5(e)} />
+        <input type="file" name="image3" onChange={(e) => updateImage3(e)} required />
+        <input type="file" name="image4" onChange={(e) => updateImage4(e)} required />
+        <input type="file" name="image5" onChange={(e) => updateImage5(e)} required />
 
         <input type="date" name="date" onChange={(e) => updateDate(e)} required />
 

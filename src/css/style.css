@@ -7,6 +7,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  z-index: 10;
+  left: 0;
+  top: 0;
 }
 
 .header img {
@@ -49,9 +52,109 @@
   top: 10%;
 }
 
+.Members {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 5%;
+}
+
+.Members h2 {
+  font-size: 30px;
+}
+
+.AllMabers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member_brief_detail {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 10px 10px;
+  border: 1px solid lightgray;
+  padding: 5px;
+  height: max-content;
+}
+
+.member_brief_detail:hover {
+  box-shadow: 11px 10px 21px -3px rgba(0, 0, 0, 0.242);
+  -webkit-box-shadow: 11px 10px 21px -3px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 11px 10px 21px -3px rgba(0, 0, 0, 0.239);
+}
+
+.member_brief_detail button {
+  margin-bottom: 2%;
+  margin-bottom: 5%;
+  background: navy;
+  border: none;
+  padding: 1%;
+  border-radius: 5px;
+  color: white;
+  height: 5vh;
+}
+
+.HomeContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.member_image img {
+  width: 85%;
+}
+
+.member_image {
+  margin-left: 7%;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 50vh;
+}
+
+.swiper-pagination-bullet {
+  background: #ffff;
+}
+
+.swiper-slide .image-container img {
+  width: 100%;
+}
+
+.Lists a,
+.member_brief_detail button a {
+  color: #ffff;
+  text-decoration: none;
+}
+
+.member_brief_detail .delete_button {
+  background: red;
+  margin-top: 3%;
+}
+
+/* .member_brief_detail button a {
+  text-decoration: none;
+} */
+
+.member_name,
+.member_post p {
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+}
+
 @media screen and (max-width: 768px) {
   .Lists {
     display: none;
+  }
+
+  .HomeContainer {
+    position: absolute;
+    left: 0;
   }
 
   .hamburger {
@@ -69,7 +172,8 @@
     height: 100vh;
     background: rgba(0, 12, 0, 0.808);
     backdrop-filter: blur(7px);
-    z-index: 1;
+    z-index: 11;
+    left: 0;
   }
 
   .Mobile-List {
@@ -78,10 +182,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20%;
+    gap: 15%;
     align-items: center;
     position: absolute;
-    top: 10%;
+    top: 15%;
+  }
+
+  .member_brief_detail {
+    width: 70%;
+    min-width: 100%;
   }
 
   .Mobile-List a {
@@ -99,7 +208,31 @@
 
   .mobile {
     display: flex;
+    animation-name: mobile;
+    animation-duration: 2.5s;
+    transition: all 350ms;
     justify-content: center;
     height: 100vh;
   }
+
+  @keyframes mobile {
+    0% {
+      transform: translateY(-40%);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  .swiper-slide .image-container img {
+    width: 90%;
+  }
+
+  /*
+  .swiper {
+    width: 600px;
+    height: 300px;
+  } */
 }

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { DeleteMember, GetAllMembers } from '../Redux/MemberApi';
 import { GetUserDetail } from '../Redux/Api';
 import '../css/style.css';
@@ -10,8 +11,6 @@ export default function Members() {
   const { members, loading, error } = useSelector((state) => state.MemberDataReducer);
   const { users } = useSelector((state) => state.UserDataReducer);
   const getResponse = sessionStorage.getItem('serverResponse');
-
-  console.log(members);
 
   const adminUser = { ...users[0] };
 
@@ -25,26 +24,44 @@ export default function Members() {
     window.location.reload();
   };
 
+  let pageDetail;
   if (loading) {
-    <div className="AdminDashboard">Please Wait a moment...</div>;
+    pageDetail = <ClipLoader color="#000" size={150} />;
   }
 
   if (error) {
-    <div className="AdminDashboard">Kindly refresh the page or contact the site manager...</div>;
+    pageDetail = 'Kindly refresh the page or contact the site manager';
   }
 
   return (
     <div className="Members">
-      <h2>All members</h2>
-
-      {
+      <div><h2>All members</h2></div>
+      <div className="AllMabers">
+        {
         members.length
           ? members.map((member) => (
-            <div key={member.id}>
-              <div>{member.picture}</div>
+            <div className="member_brief_detail" key={member.id}>
+              <div className="member_image">
+                {' '}
+                <img src={member.picture} alt="memberPhoto" />
+                {' '}
+              </div>
+              <div className="member_name">
+                <p>
+                  Name:
+                  {member.name}
+                </p>
+              </div>
+              <div className="member_post">
+                <p>
+                  Position:
+                  {member.post_held}
+                </p>
+              </div>
               {getResponse
                 ? (
                   <button
+                    className="delete_button"
                     type="button"
                     onClick={() => handleDelete(adminUser.id, member.group_id, member.id)}
                   >
@@ -64,6 +81,9 @@ export default function Members() {
           ))
           : <div>No Member</div>
       }
+      </div>
+
+      <div>{pageDetail}</div>
     </div>
   );
 }

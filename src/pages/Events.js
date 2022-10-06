@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { GetAllEvents, DeleteEvent } from '../Redux/EventApi';
 import '../css/style.css';
 
@@ -12,12 +13,13 @@ export default function Events() {
   const getResponse = sessionStorage.getItem('serverResponse');
   const user = { ...users[0] };
 
+  let pageDetail;
   if (loading) {
-    <div className="AdminDashboard">Please Wait a moment...</div>;
+    pageDetail = <ClipLoader color="#000" size={150} />;
   }
 
   if (error) {
-    <div className="AdminDashboard">Kindly refresh the page or contact the site manager...</div>;
+    pageDetail = 'Kindly refresh the page or contact the site manager';
   }
 
   console.log(events);
@@ -89,8 +91,9 @@ export default function Events() {
 
             </div>
           ))
-          : <div>No added Event yet </div>
+          : null
     }
+      <div>{pageDetail}</div>
     </div>
   );
 }

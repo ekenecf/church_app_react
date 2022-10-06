@@ -4,7 +4,6 @@ const initialState = {
   groups: [],
   loading: false,
   error: false,
-  // groupId: [],
 };
 
 const GroupDataReducer = (state = initialState, { type, payload }) => {
