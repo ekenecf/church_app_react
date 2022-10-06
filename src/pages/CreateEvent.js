@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { NavLink, useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
+import { postEvent } from '../Redux/EventApi';
+
+const FormData = require('form-data');
 
 function CreateEvent() {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const { adminId } = location.state || {};
+
   const [eventInput, changeEventsInput] = useState({
     name: '',
     image: '',
@@ -89,9 +98,35 @@ function CreateEvent() {
     });
   };
 
+  const form = new FormData();
+  form.append('name', eventInput.name);
+  form.append('description', eventInput.description);
+  form.append('image', eventInput.image);
+  form.append('image1', eventInput.image1);
+  form.append('image2', eventInput.image2);
+  form.append('image3', eventInput.image3);
+  form.append('image4', eventInput.image4);
+  form.append('image5', eventInput.image5);
+  form.append('date', eventInput.date);
+
+  const getdata = form.get('name');
+  console.log(getdata);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form execution');
+    dispatch(postEvent(form, adminId));
+    const {
+      name, description, date, image, image1, image2, image3, image4, image5,
+    } = e.target.elements;
+    name.value = '';
+    description.value = '';
+    date.value = '';
+    image.value = '';
+    image1.value = '';
+    image2.value = '';
+    image3.value = '';
+    image4.value = '';
+    image5.value = '';
   };
 
   console.log(eventInput);
@@ -112,7 +147,7 @@ function CreateEvent() {
 
         <input type="date" name="date" onChange={(e) => updateDate(e)} required />
 
-        <button type="submit">Add Member</button>
+        <button type="submit">Add Event</button>
       </form>
 
       <button type="button">
