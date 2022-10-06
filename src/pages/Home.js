@@ -1,5 +1,5 @@
 import React from 'react';
-import Slide from 'src/components/Slide';
+import Slide from '../components/Slide';
 import '../css/Estyle.css';
 
 export default function Home() {
