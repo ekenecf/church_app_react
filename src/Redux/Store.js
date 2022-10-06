@@ -4,11 +4,13 @@ import logger from 'redux-logger';
 import UserDataReducer from './Reducer';
 import GroupDataReducer from './GroupReducer';
 import MemberDataReducer from './MemberReducer';
+import EventDataReducer from './EventReducer';
 
 const rootReducer = combineReducers({
   UserDataReducer,
   GroupDataReducer,
   MemberDataReducer,
+  EventDataReducer,
 });
 
 const store = createStore(rootReducer,

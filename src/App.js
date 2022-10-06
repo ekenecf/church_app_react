@@ -11,6 +11,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import CreateEvent from './pages/CreateEvent';
 import CreateGroup from './pages/CreateGroup';
 import CreateMember from './pages/CreateMember';
+import MemberGroup from './pages/MemberGroup';
 import Group from './pages/Group';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/CreateEvent" element={<CreateEvent />} />
           <Route path="/CreateGroup" element={<CreateGroup />} />
           <Route path="/CreateMember" element={<CreateMember />} />
+          <Route path="/MemberGroup" element={<MemberGroup />} />
         </Routes>
       </Router>
     </Provider>

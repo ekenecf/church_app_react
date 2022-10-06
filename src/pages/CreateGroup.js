@@ -8,7 +8,6 @@ function CreateGroup() {
   const dispatch = useDispatch();
   const location = useLocation();
   const { adminId } = location.state || {};
-  console.log('Admin ID', adminId);
 
   const handleSubmit = (e) => {
     e.preventDefault();
