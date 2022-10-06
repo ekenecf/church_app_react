@@ -36,11 +36,11 @@ export const GetAllGroups = () => (dispatch) => {
     });
 };
 
-const DELGROUP = 'http://127.0.0.1:3000/users';
+// const DELGROUP = 'http://127.0.0.1:3000/users';
 
-export const DeleteGroup = (userid, groupid) => (dispatch) => {
-  axios.delete(`${DELGROUP}/${userid}/groups/${groupid}`)
-    .then((response) => {
-      dispatch(removeGroup(response));
-    });
-};
+// export const DeleteGroup = (userid, groupid) => (dispatch) => {
+//   axios.delete(`${DELGROUP}/${userid}/groups/${groupid}`)
+//     .then((response) => {
+//       dispatch(removeGroup(response));
+//     });
+// };

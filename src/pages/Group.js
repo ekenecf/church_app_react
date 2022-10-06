@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { GetAllGroups, DeleteGroup } from '../Redux/GroupApi';
+import { GetAllGroups } from '../Redux/GroupApi';
 import { GetUserDetail } from '../Redux/Api';
 import '../css/style.css';
 
@@ -20,11 +20,6 @@ function Group() {
 
   console.log(user.id);
 
-  const handleDelGroup = (userid, groupid) => {
-    dispatch(DeleteGroup(userid, groupid));
-    window.location.reload();
-  };
-
   return (
     <div className="AdminDashboard">
       <h1>
@@ -34,19 +29,14 @@ function Group() {
         groups.length
           ? groups.map((group) => (
             <div key={group.id}>
-              <div>{group.name}</div>
-              <div>{group.detail}</div>
-
+              <NavLink to="/MemberGroup" state={{ groupId: group.id }}>
+                <div>{group.name}</div>
+                <div>{group.detail}</div>
+              </NavLink>
               {
                 getResponse
                   ? (
                     <>
-                      <button
-                        type="button"
-                        onClick={() => handleDelGroup(user.id, group.id)}
-                      >
-                        Delete Group
-                      </button>
                       <button type="button">
                         <NavLink to="/AdminDashboard"> Back to AdminDashboard </NavLink>
                       </button>

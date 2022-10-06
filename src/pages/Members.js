@@ -7,14 +7,13 @@ import '../css/style.css';
 
 export default function Members() {
   const dispatch = useDispatch();
-  const { members } = useSelector((state) => state.MemberDataReducer);
+  const { members, loading, error } = useSelector((state) => state.MemberDataReducer);
   const { users } = useSelector((state) => state.UserDataReducer);
   const getResponse = sessionStorage.getItem('serverResponse');
 
   console.log(members);
 
   const adminUser = { ...users[0] };
-  console.log('admin ID', adminUser.id);
 
   useEffect(() => {
     dispatch(GetAllMembers());
@@ -25,6 +24,14 @@ export default function Members() {
     dispatch(DeleteMember(userid, groupId, memberid));
     window.location.reload();
   };
+
+  if (loading) {
+    <div className="AdminDashboard">Please Wait a moment...</div>;
+  }
+
+  if (error) {
+    <div className="AdminDashboard">Kindly refresh the page or contact the site manager...</div>;
+  }
 
   return (
     <div className="Members">
