@@ -1,6 +1,5 @@
-import axios from 'axios';
 import {
-  addGroup, removeGroup, allGroups, setLoadingData, setDataError,
+  addGroup, allGroups, setLoadingData, setDataError,
 } from './Actions';
 
 const GROUPURL = 'http://127.0.0.1:3000/users';
@@ -35,12 +34,3 @@ export const GetAllGroups = () => (dispatch) => {
       dispatch(setDataError(error.message));
     });
 };
-
-// const DELGROUP = 'http://127.0.0.1:3000/users';
-
-// export const DeleteGroup = (userid, groupid) => (dispatch) => {
-//   axios.delete(`${DELGROUP}/${userid}/groups/${groupid}`)
-//     .then((response) => {
-//       dispatch(removeGroup(response));
-//     });
-// };
