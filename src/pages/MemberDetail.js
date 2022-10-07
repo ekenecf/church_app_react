@@ -20,7 +20,7 @@ export default function MemberDetail() {
 
   return (
     <div className="MemberDetail">
-      <div>
+      <div className="member-image">
         <img
           src={memberDetail.picture}
           alt="Member-img"

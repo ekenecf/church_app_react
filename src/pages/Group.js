@@ -24,17 +24,28 @@ function Group() {
   }
 
   return (
-    <div className="AdminDashboard">
+    <div className="all_groups">
       <h1>
         All groups
       </h1>
       {
         groups.length
           ? groups.map((group) => (
-            <div key={group.id}>
+            <div className="group" key={group.id}>
               <NavLink to="/MemberGroup" state={{ groupId: group.id }}>
-                <div>{group.name}</div>
-                <div>{group.detail}</div>
+                <div className="member_group_name_detail">
+                  <p>
+                    Group Name:
+                    {' '}
+                    {' '}
+                    {group.name}
+                  </p>
+                  <p>
+                    Brief info:
+                    {' '}
+                    {group.detail}
+                  </p>
+                </div>
               </NavLink>
               {
                 getResponse

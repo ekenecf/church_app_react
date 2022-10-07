@@ -33,41 +33,44 @@ export default function Events() {
   };
 
   return (
-    <div className="AdminDashboard">
+    <div className="Event_details">
       <h2>
         All Events
       </h2>
       {
         events.length
           ? events.map((event) => (
-            <div key={event.id}>
+            <div className="event_info" key={event.id}>
               <div>
                 <p>
                   Name of event:
                   {' '}
                   {event.name}
                 </p>
-              </div>
-              <div>
+
                 <p>
                   Date of Event:
                   {' '}
                   {event.date}
                 </p>
-              </div>
-              <div>
+
                 <p>
                   Description:
                   {' '}
                   {event.description}
                 </p>
               </div>
-              <div>{event.image}</div>
-              <div>{event.image2}</div>
-              <div>{event.image3}</div>
-              <div>{event.image4}</div>
-              <div>{event.image5}</div>
-
+              <div className="event_image">
+                <img src={event.image} alt="eventImage" />
+                {' '}
+                <img src={event.image2} alt="eventImage" />
+                {' '}
+                <img src={event.image3} alt="eventImage" />
+                {' '}
+                <img src={event.image4} alt="eventImage" />
+                <img src={event.image5} alt="eventImage" />
+                {' '}
+              </div>
               {
               getResponse
                 ? (
