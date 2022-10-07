@@ -45,28 +45,50 @@
 
 .Events,
 .Members,
-.AdminDashboard,
 .AdminLogin {
   position: absolute;
   top: 10%;
+}
+
+.AdminDashboard {
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 3%;
+}
+
+.AdminDashboard button {
+  background: #4c4cfd;
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+  width: 10%;
+}
+
+.AdminDashboard a {
+  margin-bottom: 1%;
+  text-decoration: none;
+  margin-top: 2%;
+}
+
+.AdminDashboard a p {
+  font-size: 20px;
+  font-family: cursive;
 }
 
 .Event_details {
   position: absolute;
   top: 10%;
   width: 100%;
+  left: 0;
 }
 
 .Event_details h2 {
   text-align: center;
-}
-
-.event_info {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .all_groups {
@@ -251,6 +273,7 @@
 .member_brief_detail .delete_button {
   background: red;
   margin-top: 3%;
+  border-radius: 5px;
 }
 
 .member_name,
@@ -312,17 +335,129 @@
   margin-bottom: 2%;
   background: #4c4cfd;
   border: none;
+  border-radius: 5px;
 }
 
 .member_group_name_detail p {
   color: blue;
 }
 
+/*
 .event_image {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 60%;
+  margin-bottom: 5%;
+} */
+
+/* .event_image img {
+  width: 100%;
+  margin-bottom: 5%;
+  height: 63vh;
+} */
+
+.EventButton {
+  display: flex;
+  flex-direction: column;
+}
+
+.EventButton button {
+  width: 100%;
+  height: 8vh;
+  background: blue;
+  border: none;
+  margin-bottom: 10%;
+  border-radius: 5px;
+}
+
+.EventButton .deleteButton {
+  background: red;
+  color: white;
+}
+
+.EventButton button a {
+  color: #ffff;
+  text-decoration: none;
+}
+
+/* .event_info_nopic p {
+  font-size: 30px;
+  font-family: monospace;
+} */
+
+.EventeBody {
+  width: 100%;
+  height: 100vh;
+  max-height: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.EventCard {
+  width: 90%;
+  height: 70vh;
+  max-height: max-content;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.142);
+  border: 1px solid rgba(128, 128, 128, 0.264);
+  display: flex;
+  margin: 10px 0;
+}
+
+.EventImageBig {
+  width: 40%;
+  height: 100%;
+  background: #000;
+  object-fit: cover;
+}
+
+.EventTwoImageCard {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.EventSmallImg {
+  width: 100%;
+  height: 45%;
+  background: #000;
+  margin: 10px;
+  object-fit: cover;
+}
+
+.EventImageBig img,
+.EventSmallImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.EventInfomations {
+  width: 38%;
+  height: 100%;
+  margin-left: 1.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.EventDescription {
+  line-height: 30px;
+  color: rgb(8, 8, 8);
+}
+
+.EventDate {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  font-size: 20px;
+  font-family: monospace;
 }
 
 @media screen and (max-width: 768px) {
@@ -434,5 +569,30 @@
 
   .member_group_info {
     box-shadow: 0 2px 5px 0;
+  }
+
+  .EventCard {
+    flex-direction: column;
+    height: max-content;
+  }
+
+  .EventTwoImageCard {
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+  }
+
+  .EventImageBig {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .EventSmallImg {
+    height: 30vh;
+  }
+
+  .EventDate {
+    width: 66vw;
+    left: 0;
   }
 }

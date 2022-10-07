@@ -13,6 +13,8 @@ export default function Events() {
   const getResponse = sessionStorage.getItem('serverResponse');
   const user = { ...users[0] };
 
+  console.log('current user', user);
+
   let pageDetail;
   if (loading) {
     pageDetail = <ClipLoader color="#000" size={150} />;
@@ -28,7 +30,6 @@ export default function Events() {
   }, [dispatch]);
 
   const handleDelEvent = (userid, eventid) => {
-    console.log('Fired');
     dispatch(DeleteEvent(userid, eventid));
   };
 
@@ -37,46 +38,39 @@ export default function Events() {
       <h2>
         All Events
       </h2>
-      {
+
+      <div className="EventeBody">
+        {
         events.length
           ? events.map((event) => (
-            <div className="event_info" key={event.id}>
-              <div>
-                <p>
-                  Name of event:
+            <div key={event.id} className="EventCard">
+              <div className="EventImageBig"><img src={event.image} alt="eventImage" /></div>
+              <div className="EventTwoImageCard">
+                <div className="EventSmallImg"><img src={event.image2} alt="eventImage" /></div>
+                <div className="EventSmallImg">
                   {' '}
-                  {event.name}
-                </p>
+                  <img src={event.image3} alt="eventImage" />
+                </div>
+              </div>
+              <article className="EventInfomations">
+                <h2>{event.name}</h2>
+                <span className="EventDescription">
+                  {event.description}
+                </span>
 
-                <p>
-                  Date of Event:
+                <div className="EventDate">
+                  Event Date:
                   {' '}
                   {event.date}
-                </p>
-
-                <p>
-                  Description:
-                  {' '}
-                  {event.description}
-                </p>
-              </div>
-              <div className="event_image">
-                <img src={event.image} alt="eventImage" />
-                {' '}
-                <img src={event.image2} alt="eventImage" />
-                {' '}
-                <img src={event.image3} alt="eventImage" />
-                {' '}
-                <img src={event.image4} alt="eventImage" />
-                <img src={event.image5} alt="eventImage" />
-                {' '}
-              </div>
-              {
+                </div>
+                <>
+                  {
               getResponse
                 ? (
-                  <>
+                  <div className="EventButton">
                     <button
                       type="button"
+                      className="deleteButton"
                       onClick={() => handleDelEvent(user.id, event.id)}
                     >
                       Delete Event
@@ -84,19 +78,17 @@ export default function Events() {
                     <button type="button">
                       <NavLink to="/AdminDashboard"> Back to AdminDashboard </NavLink>
                     </button>
-                  </>
+                  </div>
                 )
                 : null
             }
-              <button type="button">
-                <NavLink to="/"> Back to Home Page</NavLink>
-              </button>
-
+                </>
+              </article>
             </div>
-          ))
-          : null
-    }
-      <div>{pageDetail}</div>
+          )) : null
+}
+        <div>{pageDetail}</div>
+      </div>
     </div>
   );
 }
