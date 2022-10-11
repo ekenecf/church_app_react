@@ -47,7 +47,6 @@ function AdminDashboard() {
         <NavLink to="/CreateMember" state={{ adminId: adminUser.id }}>
           <p>Create Member</p>
         </NavLink>
-
         <button
           type="button"
           onClick={() => handleLogout()}

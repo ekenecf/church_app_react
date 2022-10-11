@@ -32,6 +32,7 @@ export default function Slide() {
     pageDetail = 'Kindly refresh the page or contact the site manager';
   }
 
+  // Swiper
   const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',

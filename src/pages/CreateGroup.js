@@ -24,11 +24,11 @@ function CreateGroup() {
 
   return (
 
-    <div className="AdminDashboard">
+    <div className="create_group">
       <h2>Create group</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Name of group here" required />
-        <input type="text" name="detail" placeholder="Brief detail of group" required />
+        <input className="create_group_name" type="text" name="name" placeholder="Name of group here" required />
+        <input className="create_group_description" type="text" name="detail" placeholder="Brief detail of group" required />
         <button type="submit">Add</button>
       </form>
       <button type="button">
