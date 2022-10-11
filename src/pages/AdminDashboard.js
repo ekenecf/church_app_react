@@ -31,25 +31,22 @@ function AdminDashboard() {
     feedback = 'You are not authorized to visit this page';
   }
 
-  console.log('check adminUser', adminUser.id);
-
   if (getResponse === '200') {
     return (
       <div className="AdminDashboard">
-        Welcome to admin dashboard
+        <h2> Welcome to admin dashboard</h2>
 
         <NavLink to="/CreateGroup" state={{ adminId: adminUser.id }}>
-          <div>Create Group</div>
+          <p>Create Group</p>
         </NavLink>
 
         <NavLink to="/CreateEvent" state={{ adminId: adminUser.id }}>
-          <div>Create Event</div>
+          <p>Create Event</p>
         </NavLink>
 
         <NavLink to="/CreateMember" state={{ adminId: adminUser.id }}>
-          <div>Create Member</div>
+          <p>Create Member</p>
         </NavLink>
-
         <button
           type="button"
           onClick={() => handleLogout()}

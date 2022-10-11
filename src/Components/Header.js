@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../css/style.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Logo from '../assets/download_st_charles.jpg';
@@ -17,11 +18,31 @@ const Header = () => {
       <nav className="header">
         <img src={Logo} alt="patron saint" />
         <ul className="Lists">
-          <li>Home</li>
-          <li>Events</li>
-          <li>Members</li>
-          <li>groups</li>
-          <li>Admin Login</li>
+          <li>
+            <NavLink to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/Events">
+              Events
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/Members">
+              Members
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/Groups">
+              Groups
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/AdminLogin">
+              Admin Login
+            </NavLink>
+          </li>
         </ul>
         <div className="hamburger">
           <div role="button" tabIndex={0} onClick={handlemenu} onKeyDown={handlemenu}>

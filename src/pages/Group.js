@@ -1,37 +1,51 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { GetAllGroups } from '../Redux/GroupApi';
-import { GetUserDetail } from '../Redux/Api';
 import '../css/style.css';
 
 function Group() {
   const dispatch = useDispatch();
-  const { groups } = useSelector((state) => state.GroupDataReducer);
-  const { users } = useSelector((state) => state.UserDataReducer);
+  const { groups, loading, error } = useSelector((state) => state.GroupDataReducer);
   const getResponse = sessionStorage.getItem('serverResponse');
 
   useEffect(() => {
     dispatch(GetAllGroups());
-    dispatch(GetUserDetail());
   }, [dispatch]);
 
-  const user = { ...users[0] };
+  let pageDetail;
+  if (loading) {
+    pageDetail = <ClipLoader color="#000" size={150} />;
+  }
 
-  console.log(user.id);
+  if (error) {
+    pageDetail = 'Kindly refresh the page or contact the site manager';
+  }
 
   return (
-    <div className="AdminDashboard">
+    <div className="all_groups">
       <h1>
         All groups
       </h1>
       {
         groups.length
           ? groups.map((group) => (
-            <div key={group.id}>
+            <div className="group" key={group.id}>
               <NavLink to="/MemberGroup" state={{ groupId: group.id }}>
-                <div>{group.name}</div>
-                <div>{group.detail}</div>
+                <div className="member_group_name_detail">
+                  <p>
+                    Group Name:
+                    {' '}
+                    {' '}
+                    {group.name}
+                  </p>
+                  <p>
+                    Brief info:
+                    {' '}
+                    {group.detail}
+                  </p>
+                </div>
               </NavLink>
               {
                 getResponse
@@ -50,8 +64,9 @@ function Group() {
 
             </div>
           ))
-          : <div>No added group </div>
+          : null
       }
+      <div>{pageDetail}</div>
     </div>
   );
 }

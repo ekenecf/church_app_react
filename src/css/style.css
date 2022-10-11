@@ -7,6 +7,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  z-index: 10;
+  left: 0;
+  top: 0;
 }
 
 .header img {
@@ -41,17 +44,588 @@
 }
 
 .Events,
-.MemberDetail,
 .Members,
-.AdminDashboard,
 .AdminLogin {
   position: absolute;
   top: 10%;
 }
 
+.create_group {
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background:
+    linear-gradient(#c1f6f28d, #14191e56),
+    url('https://images.squarespace-cdn.com/content/v1/5cb1534c1f3a260001af5ac7/1572927905800-75HLT16G72W5FC76WE3O/st-charles-1030x579.jpg?format=2500w');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
+
+.create_group form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.AdminDashboard button {
+  background: #4c4cfd;
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+  width: 22%;
+  margin-top: 2%;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.AdminDashboard a {
+  margin-bottom: 1%;
+  text-decoration: none;
+  margin-top: 2%;
+}
+
+.group a {
+  text-decoration: none;
+
+  /* font-size: 20px; */
+  color: white;
+}
+
+.Lists a,
+.member_brief_detail button a {
+  color: #ffff;
+  text-decoration: none;
+}
+
+.AdminDashboard button a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+.member_group button {
+  background: #4c4cfd;
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+
+  /* width: 22%; */
+  margin-bottom: 2%;
+}
+
+.member_group_name_detail p {
+  font-size: 25px;
+}
+
+.group button {
+  margin-bottom: 2%;
+  background: #4c4cfd;
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+}
+
+.EventButton button {
+  width: 100%;
+  height: 8vh;
+  background: blue;
+  border: none;
+  margin-bottom: 10%;
+  border-radius: 5px;
+}
+
+.create_group button {
+  margin-top: 3%;
+  background: #6060ee;
+  border: none;
+  border-radius: 5px;
+  height: 7vh;
+}
+
+.MemberDetail button,
+.member_brief_detail button {
+  margin-bottom: 2%;
+  margin-bottom: 5%;
+  background: navy;
+  border: none;
+  padding: 1%;
+  border-radius: 5px;
+  color: white;
+  height: 5vh;
+}
+
+.create_group form button {
+  background: #4c4cfd;
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+  width: 10%;
+  color: white;
+}
+
+.create_group form .create_group_name {
+  width: 40%;
+  margin-bottom: 2%;
+  height: 4vh;
+  text-align: center;
+}
+
+.AdminDashboard form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.AdminDashboard input[type="text" i] {
+  width: 35%;
+  margin: 1%;
+  height: 3vh;
+  text-align: center;
+}
+
+.AdminDashboard input[type="date" i] {
+  width: 35%;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+.AdminDashboard form textarea {
+  width: 35%;
+  height: 10vh;
+  text-align: center;
+  resize: none;
+  margin-bottom: 1%;
+}
+
+.create_group button a {
+  color: white;
+  text-decoration: none;
+}
+
+.create_group form .create_group_description {
+  height: 10vh;
+  width: 40%;
+  text-align: center;
+}
+
+.AdminDashboard {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background:
+    linear-gradient(#c1f6f28d, #14191e56),
+    url('https://images.squarespace-cdn.com/content/v1/5cb1534c1f3a260001af5ac7/1572927905800-75HLT16G72W5FC76WE3O/st-charles-1030x579.jpg?format=2500w');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
+
+.AdminDashboard input[type="number" i] {
+  width: 35%;
+}
+
+.AdminDashboard h2 {
+  font-family: cursive;
+  color: #ffff;
+}
+
+.MemberDetail p {
+  font-size: 25px;
+  font-family: cursive;
+}
+
+.member_name,
+.member_post p {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.member_group_name p {
+  font-size: 25px;
+  color: #ffff;
+  font-family: monospace;
+}
+
+/*
+.all_groups {
+  font-family: cursive;
+} */
+
+.AdminDashboard a p {
+  font-size: 20px;
+  font-family: cursive;
+  color: #ffff;
+}
+
+.Event_details {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  left: 0;
+}
+
+.Event_details h2 {
+  text-align: center;
+}
+
+.all_groups {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  height: 90vh;
+  font-family: cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background:
+    linear-gradient(#c1f6f28d, #14191e56),
+    url('https://images.squarespace-cdn.com/content/v1/5cb1534c1f3a260001af5ac7/1572927905800-75HLT16G72W5FC76WE3O/st-charles-1030x579.jpg?format=2500w');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.MemberDetail {
+  position: absolute;
+  top: 12%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  right: 0;
+  margin-inline: 5%;
+
+  --bs-gutter-x: 0;
+
+  -webkit-animation: firstplansec 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: FirstPlanSec  0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes FirstPlanSec {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
+    opacity: 1;
+  }
+}
+
+@keyframes FirstPlanSec {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
+    opacity: 1;
+  }
+}
+
+.member_image img {
+  width: 85%;
+}
+
+.MemberDetail .member-image {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 50%;
+  margin-top: 2%;
+}
+
+.member_group_image img {
+  width: 40%;
+  height: 30vh;
+}
+
+.EventImageBig img,
+.EventSmallImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.MemberDetail .member-image img {
+  width: 100%;
+}
+
+.MemberDetail button a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+.Members {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 5%;
+}
+
+.Members h2 {
+  font-size: 30px;
+}
+
+.AllMabers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member_brief_detail {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 10px 10px;
+  border: 1px solid lightgray;
+  padding: 5px;
+  height: max-content;
+}
+
+.member_brief_detail:hover,
+.MemberDetail:hover {
+  box-shadow: 11px 10px 21px -3px rgba(0, 0, 0, 0.242);
+  -webkit-box-shadow: 11px 10px 21px -3px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 11px 10px 21px -3px rgba(0, 0, 0, 0.239);
+}
+
+.HomeContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.member_image {
+  margin-left: 7%;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 50vh;
+}
+
+.swiper-pagination-bullet {
+  background: #ffff;
+}
+
+.swiper-slide .image-container img {
+  width: 100%;
+}
+
+.member_brief_detail .delete_button {
+  background: red;
+  margin-top: 3%;
+  border-radius: 5px;
+}
+
+.member_group {
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #c1d4b6;
+  left: 0;
+}
+
+.member_group h2 {
+  font-family: cursive;
+}
+
+.member_group_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 75%;
+  background: #579357;
+  box-shadow: 0 11px 14px 0;
+}
+
+.member_group button a {
+  text-decoration: none;
+  color: white;
+}
+
+.member_group_image {
+  width: 50%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 3%;
+}
+
+.group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.EventButton {
+  display: flex;
+  flex-direction: column;
+}
+
+.EventButton .deleteButton {
+  background: red;
+  color: white;
+}
+
+.EventButton button a {
+  color: #ffff;
+  text-decoration: none;
+}
+
+.EventeBody {
+  width: 100%;
+  height: 100vh;
+  max-height: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.EventCard {
+  width: 90%;
+  height: 70vh;
+  max-height: max-content;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.142);
+  border: 1px solid rgba(128, 128, 128, 0.264);
+  display: flex;
+  margin: 10px 0;
+}
+
+.EventImageBig {
+  width: 40%;
+  height: 100%;
+  background: #000;
+  object-fit: cover;
+}
+
+.EventTwoImageCard {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.EventSmallImg {
+  width: 100%;
+  height: 45%;
+  background: #000;
+  margin: 10px;
+  object-fit: cover;
+}
+
+.EventInfomations {
+  width: 38%;
+  height: 100%;
+  margin-left: 1.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.EventDescription {
+  line-height: 30px;
+  color: rgb(8, 8, 8);
+}
+
+.EventDate {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  font-size: 20px;
+  font-family: monospace;
+}
+
+.AdminLogin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.AdminLogin form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+input[type="email" i] {
+  margin-bottom: 2%;
+  width: 25%;
+  height: 4vh;
+}
+
+input[type="password" i] {
+  margin-bottom: 2%;
+  width: 25%;
+  height: 4vh;
+}
+
+.AdminLogin h2 {
+  font-family: cursive;
+}
+
+.AdminLogin form button {
+  background: #4c4cfd;
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+  width: 10%;
+  color: white;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .Lists {
     display: none;
+  }
+
+  .HomeContainer {
+    position: absolute;
+    left: 0;
   }
 
   .hamburger {
@@ -68,8 +642,9 @@
     width: 100%;
     height: 100vh;
     background: rgba(0, 12, 0, 0.808);
-    backdrop-filter: blur(7px);
-    z-index: 1;
+    backdrop-filter: blur(10px);
+    z-index: 11;
+    left: 0;
   }
 
   .Mobile-List {
@@ -78,10 +653,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20%;
+    gap: 15%;
     align-items: center;
     position: absolute;
-    top: 10%;
+    top: 15%;
+  }
+
+  .member_brief_detail {
+    width: 70%;
+    min-width: 100%;
   }
 
   .Mobile-List a {
@@ -99,7 +679,103 @@
 
   .mobile {
     display: flex;
+    animation-name: mobile;
+    animation-duration: 2.5s;
+    transition: all 350ms;
     justify-content: center;
     height: 100vh;
+  }
+
+  @keyframes mobile {
+    0% {
+      transform: translateY(-40%);
+      opacity: 0.6;
+    }
+
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  .member_group_image img {
+    width: 80%;
+    height: 22vh;
+    object-fit: cover;
+  }
+
+  .swiper-slide .image-container img {
+    width: 90%;
+  }
+
+  .MemberDetail .member-image {
+    width: 95%;
+    margin-top: 2%;
+  }
+
+  .MemberDetail p {
+    margin-inline: 3%;
+  }
+
+  .member_group_name p {
+    font-size: 20px;
+  }
+
+  .member_group h2 {
+    font-size: 15px;
+  }
+
+  .member_group_info {
+    box-shadow: 0 2px 5px 0;
+  }
+
+  .EventCard {
+    flex-direction: column;
+    height: max-content;
+  }
+
+  .EventTwoImageCard {
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+  }
+
+  .EventImageBig {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .EventSmallImg {
+    height: 30vh;
+  }
+
+  .EventDate {
+    width: 66vw;
+    left: 0;
+  }
+
+  .AdminDashboard input[type="text" i] {
+    width: 70%;
+  }
+
+  .AdminDashboard form textarea {
+    width: 70%;
+  }
+
+  .AdminDashboard input[type="date" i] {
+    width: 70%;
+    height: 4vh;
+  }
+
+  .AdminDashboard button {
+    width: 45%;
+  }
+
+  .AdminDashboard input[type="number" i] {
+    width: 70%;
+  }
+
+  .all_groups {
+    height: max-content;
   }
 }

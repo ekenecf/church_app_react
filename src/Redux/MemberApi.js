@@ -17,7 +17,6 @@ export const postMember = (member, userid, groupId) => (dispatch) => {
       console.log('Expecting res', res);
       dispatch(addMember(res));
     }).catch((error) => {
-      dispatch(setDataError());
       console.log('Catch error', error);
     });
 };
