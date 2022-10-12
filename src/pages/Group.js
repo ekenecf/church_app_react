@@ -70,5 +70,4 @@ function Group() {
     </div>
   );
 }
-
 export default Group;

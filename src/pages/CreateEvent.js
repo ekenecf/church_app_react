@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
 import { postEvent } from '../Redux/EventApi';
 
 const FormData = require('form-data');
@@ -79,6 +78,7 @@ function CreateEvent() {
   form.append('image2', eventInput.image2);
   form.append('date', eventInput.date);
 
+  // Get from form data
   const getdata = form.get('name');
   console.log(getdata);
 
