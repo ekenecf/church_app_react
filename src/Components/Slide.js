@@ -5,7 +5,6 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import Swiper from 'swiper/bundle';
 import { GetAllEvents } from '../Redux/EventApi';
 
-// import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -14,10 +13,7 @@ export default function Slide() {
   const { events, loading, error } = useSelector((state) => state.EventDataReducer);
   const dispatch = useDispatch();
 
-  console.log(events);
-
   const slicedEvents = events.slice(0, 6);
-  console.log('sliced events', slicedEvents);
 
   useEffect(() => {
     dispatch(GetAllEvents());
