@@ -61,7 +61,6 @@ function Group() {
               <button type="button">
                 <NavLink to="/"> Back to Home </NavLink>
               </button>
-
             </div>
           ))
           : null
@@ -70,5 +69,4 @@ function Group() {
     </div>
   );
 }
-
 export default Group;

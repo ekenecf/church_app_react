@@ -13,8 +13,6 @@ export default function Events() {
   const getResponse = sessionStorage.getItem('serverResponse');
   const user = { ...users[0] };
 
-  console.log('current user', user);
-
   let pageDetail;
   if (loading) {
     pageDetail = <ClipLoader color="#000" size={150} />;
@@ -46,10 +44,10 @@ export default function Events() {
             <div key={event.id} className="EventCard">
               <div className="EventImageBig"><img src={event.image} alt="eventImage" /></div>
               <div className="EventTwoImageCard">
-                <div className="EventSmallImg"><img src={event.image2} alt="eventImage" /></div>
+                <div className="EventSmallImg"><img src={event.image1} alt="eventImage" /></div>
                 <div className="EventSmallImg">
                   {' '}
-                  <img src={event.image3} alt="eventImage" />
+                  <img src={event.image2} alt="eventImage" />
                 </div>
               </div>
               <article className="EventInfomations">

@@ -566,6 +566,8 @@
 .EventDescription {
   line-height: 30px;
   color: rgb(8, 8, 8);
+  word-break: break-all;
+  padding-inline: 3%;
 }
 
 .EventDate {
@@ -706,6 +708,7 @@ input[type="password" i] {
 
   .swiper-slide .image-container img {
     width: 90%;
+    height: 100vh;
   }
 
   .MemberDetail .member-image {
@@ -777,5 +780,13 @@ input[type="password" i] {
 
   .all_groups {
     height: max-content;
+  }
+
+  .EventInfomations {
+    width: 100%;
+  }
+
+  .EventButton {
+    margin-bottom: 10%;
   }
 }
